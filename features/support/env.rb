@@ -8,12 +8,13 @@ end
 
 # Load the desired configuration from appium.txt, create a driver then
 # Add the methods to the world
-caps = { caps: {
-  platformName: 'Android',
-  deviceName: 'Moto X',
-  app: 'apps/TrianguloApp.apk',
-  appPackage: 'com.eliasnogueira.trianguloapp'
-} }
+if ENV['PLATFORM_NAME'] == 'android'
+  caps = Appium.load_appium_txt file: File.expand_path("../android_appium.txt", __FILE__), verbose: true
+elsif ENV['PLATFORM_NAME'] == 'ios'
+  caps = Appium.load_appium_txt file: File.expand_path("../ios_appium.txt", __FILE__), verbose: true
+else
+  raise 'Please try again and provide the platform you want to test'
+end
 
 Appium::Driver.new(caps)
 Appium.promote_appium_methods AppiumWorld

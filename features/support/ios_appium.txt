@@ -1,0 +1,5 @@
+[caps]
+platformName = "Android"
+deviceName = "Moto X"
+app = "apps/TrianguloApp.apk"
+appPackage = "com.eliasnogueira.trianguloapp"
