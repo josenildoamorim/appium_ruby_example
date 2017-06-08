@@ -1,5 +1,6 @@
 [caps]
-platformName = "Android"
-deviceName = "Moto X"
-app = "apps/TrianguloApp.apk"
-appPackage = "com.eliasnogueira.trianguloapp"
+platformName = "iOS"
+deviceName = "iPhone 6"
+platformVersion = "10.3"
+app = ""
+automationName = "XCUITest"
